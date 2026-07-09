@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  width: 350px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.logo-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+  margin-bottom: 15px;
+}
+
+.heading {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.subheading {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.login-box {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 25px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.input-div {
+  margin-bottom: 15px;
+}
+
+.input-div label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-div input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  width: 100%;
+  background: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bold;
+}

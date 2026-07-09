@@ -1,0 +1,23 @@
+:root {
+  --primary-purple: #7c4dff;
+  --primary-bg: #f8f9fd;
+  --sidebar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text-dark: #1a1d20;
+  --text-muted: #74788d;
+  --border-light: #ececf5;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--primary-bg);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
