@@ -12,7 +12,7 @@ class User(base):
     email = Column(String, unique=True, nullable=False)
     hashed_password = Column(String, nullable=False)
     
-    # Establishes a relationship: one user can have multiple tasks
+
     tasks = relationship("task", back_populates="owner")
 
 class task(base):
