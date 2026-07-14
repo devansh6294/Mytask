@@ -54,7 +54,7 @@ function DashboardPage({ apiBaseUrl, token, onLogout }) {
     } catch (err) { console.error(err); }
   };
 
-  // Updates status via query parameter matching FastAPI backend
+
   const handleStatusChange = async (taskId, newStatus) => {
     try {
       const res = await fetch(`${apiBaseUrl}/task/${taskId}?status=${newStatus}`, {
@@ -67,7 +67,7 @@ function DashboardPage({ apiBaseUrl, token, onLogout }) {
     } catch (err) { console.error(err); }
   };
 
-  // Deletes a specific task via path parameter matching FastAPI backend
+
   const handleDeleteTask = async (taskId) => {
     if (!window.confirm("Are you sure you want to delete this task?")) return;
     try {
@@ -83,13 +83,13 @@ function DashboardPage({ apiBaseUrl, token, onLogout }) {
 
   return (
     <div className="app-container">
-      {/* Top Navbar */}
+  
       <header className="navbar">
         <div className="app-title">Mytask (Welcome, {username}!)</div>
         <button className="logout-btn" onClick={onLogout}>Logout</button>
       </header>
 
-      {/* Main Task Section */}
+      
       <main className="task-section">
         <div className="action-row">
           <div className="filter-buttons">
@@ -100,7 +100,7 @@ function DashboardPage({ apiBaseUrl, token, onLogout }) {
           <button className="add-task-btn" onClick={() => setIsModalOpen(true)}>+ Add New Task</button>
         </div>
 
-        {/* List of Tasks */}
+        
         <div className="tasks-list">
           {tasks
             .filter(t => {
@@ -118,7 +118,7 @@ function DashboardPage({ apiBaseUrl, token, onLogout }) {
                 </div>
                 
                 <div className="task-actions">
-                  {/* Status Dropdown selector */}
+    
                   <select 
                     className="status-dropdown" 
                     value={task.status || "just started"} 
@@ -129,7 +129,7 @@ function DashboardPage({ apiBaseUrl, token, onLogout }) {
                     <option value="completed">Completed</option>
                   </select>
 
-                  {/* Delete Button */}
+              
                   <button className="delete-btn" onClick={() => handleDeleteTask(task.task_id)}>
                     Delete
                   </button>
