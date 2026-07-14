@@ -1,9 +1,10 @@
 from datetime import datetime, timedelta, timezone
 from jose import jwt
 import bcrypt
+import os
 
 
-SECRET_KEY = "hfmcsiovyhioiincmax;cuorsiucs"
+SECRET_KEY = os.environ.get("SECRET_KEY", "SUPER_SECRET_SIGNING_KEY_KEEP_THIS_SAFE")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
