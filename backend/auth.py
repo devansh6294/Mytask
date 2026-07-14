@@ -3,12 +3,12 @@ from jose import jwt
 import bcrypt
 
 
-SECRET_KEY = "SUPER_SECRET_SIGNING_KEY_KEEP_THIS_SAFE"
+SECRET_KEY = "hfmcsiovyhioiincmax;cuorsiucs"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 def get_password_hash(password: str) -> str:
-    """Generates a secure cryptographic hash using standard bcrypt."""
+    
     
     password_bytes = password.encode('utf-8')
   
@@ -18,7 +18,7 @@ def get_password_hash(password: str) -> str:
     return hashed.decode('utf-8')
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    """Verifies if the submitted plain text password matches the database hash."""
+  
     try:
         return bcrypt.checkpw(
             plain_password.encode('utf-8'), 
@@ -28,7 +28,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
         return False
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
-    """Generates a signed JSON Web Token containing user data and expiration timestamp."""
+   
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.now(timezone.utc) + expires_delta
