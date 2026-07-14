@@ -1,7 +1,7 @@
 from pydantic import BaseModel, ConfigDict
 from datetime import date
 
-# --- User Management Schemas ---
+
 class UserCreate(BaseModel):
     username: str
     email: str
@@ -14,7 +14,6 @@ class UserOut(BaseModel):
     
     model_config = ConfigDict(from_attributes=True)
 
-# --- Authentication Token Schemas ---
 class Token(BaseModel):
     access_token: str
     token_type: str
@@ -23,7 +22,6 @@ class TokenData(BaseModel):
     username: str | None = None
 
 
-# --- Task Management Schemas ---
 class task_post(BaseModel):
     title: str
     description: str
