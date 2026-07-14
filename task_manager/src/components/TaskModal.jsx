@@ -91,7 +91,7 @@ function TaskModal({ isOpen, onClose, onSubmit }) {
             value={startDate} 
             onChange={(e) => setStartDate(e.target.value)} 
           />
-          <button type="submit" className="main-btn" style={{ width: '100%', marginTop: '10px' }}>
+          <button type="submit" className="add-task-btn" style={{ width: '100%', marginTop: '10px' }}>
             Save Task Blueprint
           </button>
         </form>
