@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AuthPage from './views/AuthPage';
 import DashboardPage from './views/DashboardPage';
 
-// Dynamically picks up the production Vercel environment variable, or falls back to local development
+
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 function App() {
