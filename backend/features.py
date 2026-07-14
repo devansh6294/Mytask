@@ -5,8 +5,6 @@ import auth
 from sqlalchemy import func
 
 
-# --- User CRUD Logic ---
-
 def create_user(db: Session, user_schema):
     hashed_pwd = auth.get_password_hash(user_schema.password)
     db_user = User(
@@ -23,7 +21,7 @@ def get_user_by_username(db: Session, username: str):
     return db.query(User).filter(User.username == username).first()
 
 
-# --- Task CRUD Logic (Scoped to Logged-In User) ---
+
 
 def create_task(db: Session, user, user_id: int):
     oink = task(
@@ -33,7 +31,7 @@ def create_task(db: Session, user, user_id: int):
         due_date=user.start_date + timedelta(days=user.due),
         start_date=user.start_date,
         status="just started",
-        user_id=user_id  # Implicitly link the task to the current authenticated user
+        user_id=user_id  
     )
     db.add(oink)
     db.commit()
@@ -42,12 +40,12 @@ def create_task(db: Session, user, user_id: int):
 
 
 def get_all(db: Session, user_id: int):
-    # Retrieve ONLY tasks where user_id matches
+    
     return db.query(task).filter(task.user_id == user_id).all()
 
 
 def my_task(db: Session, task_id: int, user_id: int):
-    # Find task matching the ID AND belonging to the current user
+  
     return db.query(task).filter(task.task_id == task_id, task.user_id == user_id).first()
 
 
